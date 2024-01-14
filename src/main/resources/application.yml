@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    username: root
+    password: JongWon1408!
+    url: jdbc:mysql://localhost:3306/querydsl
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    #    open-in-view: false // OSIV 세션
+    database-platform: org.hibernate.dialect.MySQLDialect
+
+    hibernate:
+      ddl-auto: create
+      # create - 기존 테이블 삭제 후 다시 생성 (DROP + CREATE)
+      # create-drop - create 와 같으나 종료시점에 테이블 DROP
+      # update - 변경분만 반영(운영DB에는 사용하면 안됨)
+      # validate - 엔티티와 테이블이 정상 매핑되었는지만 확인
+      # none - 사용하지 않음
+
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+    properties:
+      hibernate:
+        #        show-sql: true
+        format_sql: true
+        use_sql_comments: true
+        default_batch_fetch_size: 100
+
+  data:
+    web:
+      pageable:
+        default-page-size: 10
+        max-page-size: 2000
+        one-indexed-parameters: true # Page 사용시 시작 인덱스 1부터, -1를 하는것뿐 , default 값을 사용하든지, PageRequest.of 로 정의해서 쓰기
+
+logging.level:
+  org.hibernate.SQL: debug
+#  org.hibernate.type: trace
+

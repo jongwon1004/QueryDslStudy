@@ -260,6 +260,8 @@ public class QueryDslBasicTest {
         assertThat(teamB.get(team.name)).isEqualTo("teamB");
         assertThat(teamA.get(member.age.avg())).isEqualTo(35); // 30, 40
 
+        System.out.println();
+
 
     }
     

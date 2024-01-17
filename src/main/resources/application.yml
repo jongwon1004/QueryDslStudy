@@ -35,7 +35,7 @@ spring:
       pageable:
         default-page-size: 10
         max-page-size: 2000
-        one-indexed-parameters: true # Page 사용시 시작 인덱스 1부터, -1를 하는것뿐 , default 값을 사용하든지, PageRequest.of 로 정의해서 쓰기
+#        one-indexed-parameters: true # Page 사용시 시작 인덱스 1부터, -1를 하는것뿐 , default 값을 사용하든지, PageRequest.of 로 정의해서 쓰기
 
 logging.level:
   org.hibernate.SQL: debug
